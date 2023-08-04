@@ -1,0 +1,28 @@
+.trip-card {
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s linear;
+  cursor: pointer;
+  border: 1px solid lightgrey;
+
+  &__description {
+    padding: 16px;
+  }
+
+  &__image {
+    width: 195px;
+    height: 180px;
+  }
+
+  &__city {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+
+  &__date {
+    color: grey;
+  }
+  &:hover {
+    border: 1px solid lightskyblue;
+  }
+}
