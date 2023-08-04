@@ -1,5 +1,6 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import TripCard from "../TripCard";
+import Search from "../Search";
 
 import "./TripList.scss";
 
@@ -38,10 +39,17 @@ export const TripList: FC<TripListProps> = ({
   setFromDate,
   setToDate,
 }) => {
+  const [searchQuery, setSearchQuery] = useState<string>("");
+
+  const filteredData = staticData.filter((card) =>
+    card.city.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
-    <div className="trip-list">
-      {staticData &&
-        staticData.map((card) => (
+    <>
+      <Search value={searchQuery} onChange={setSearchQuery} />
+      <div className="trip-list">
+        {filteredData.map((card) => (
           <TripCard
             key={card.id}
             {...card}
@@ -52,6 +60,7 @@ export const TripList: FC<TripListProps> = ({
             }}
           />
         ))}
-    </div>
+      </div>
+    </>
   );
 };
