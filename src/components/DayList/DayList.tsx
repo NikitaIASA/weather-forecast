@@ -14,7 +14,14 @@ export const DayList: FC<DayListProps> = ({ list }) => {
       {list.length > 0 && <h2 className="day-list__dates">Dates</h2>}
       <div className="day-list">
         {list.map((item, index) => (
-          <DayCard key={index} datetime={item.datetime} temp={item.temp} />
+          <DayCard
+            key={index}
+            conditions={item.conditions}
+            maxTemperature={item.tempmax}
+            minTemperature={item.tempmin}
+            date={item.datetime}
+            icon={item.icon}
+          />
         ))}
       </div>
     </>
