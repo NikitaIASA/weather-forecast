@@ -6,24 +6,31 @@ import "./DayList.scss";
 
 interface DayListProps {
   list: Days;
+  isLoading: boolean;
 }
 
-export const DayList: FC<DayListProps> = ({ list }) => {
+export const DayList: FC<DayListProps> = ({ list, isLoading }) => {
   return (
     <>
-      {list.length > 0 && <h2 className="day-list__dates">Dates</h2>}
-      <div className="day-list">
-        {list.map((item, index) => (
-          <DayCard
-            key={index}
-            conditions={item.conditions}
-            maxTemperature={item.tempmax}
-            minTemperature={item.tempmin}
-            date={item.datetime}
-            icon={item.icon}
-          />
-        ))}
-      </div>
+      {isLoading ? (
+        <p>Loading...</p>
+      ) : (
+        <>
+          {list.length > 0 && <h2 className="day-list__dates">Dates</h2>}
+          <div className="day-list">
+            {list.map((item, index) => (
+              <DayCard
+                key={index}
+                conditions={item.conditions}
+                maxTemperature={item.tempmax}
+                minTemperature={item.tempmin}
+                date={item.datetime}
+                icon={item.icon}
+              />
+            ))}
+          </div>
+        </>
+      )}
     </>
   );
 };

@@ -7,7 +7,7 @@ const WeatherPage: React.FC = () => {
   const [fromDate, setFromDate] = useState("");
   const [toDate, setToDate] = useState("");
 
-  const { data, isError } = useCityData({
+  const { data, isLoading, isError } = useCityData({
     selectedCity,
     fromDate,
     toDate,
@@ -23,6 +23,7 @@ const WeatherPage: React.FC = () => {
       selectedCity={selectedCity}
       setSelectedCity={setSelectedCity}
       fromDate={fromDate}
+      isLoading={isLoading}
       setFromDate={setFromDate}
       setToDate={setToDate}
     />

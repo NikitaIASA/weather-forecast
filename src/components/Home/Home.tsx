@@ -11,6 +11,7 @@ interface HomeProps {
   data?: Days;
   selectedCity: string;
   fromDate: string;
+  isLoading: boolean;
   setSelectedCity: (city: string) => void;
   setFromDate: (date: string) => void;
   setToDate: (date: string) => void;
@@ -19,6 +20,7 @@ interface HomeProps {
 export const Home: FC<HomeProps> = ({
   data,
   selectedCity,
+  isLoading,
   setSelectedCity,
   fromDate,
   setFromDate,
@@ -36,7 +38,7 @@ export const Home: FC<HomeProps> = ({
             setFromDate={setFromDate}
             setToDate={setToDate}
           />
-          <DayList list={data || []} />
+          <DayList list={data || []} isLoading={isLoading}/>
         </div>
         <div className="width-30">
           <TodayBlock selectedCity={selectedCity} fromDate={fromDate}/>
