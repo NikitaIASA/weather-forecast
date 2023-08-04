@@ -25,7 +25,7 @@ export const Home: FC<HomeProps> = ({
   return (
     <Container>
       <div className="flex">
-        <div className="width-75">
+        <div className="width-70">
           <h1 className="title">
             Weather <span className="title__bold">ForeCast</span>
           </h1>
@@ -36,7 +36,7 @@ export const Home: FC<HomeProps> = ({
           />
           <DayList list={data || []} />
         </div>
-        <div className="width-25">
+        <div className="width-30">
           <TodayBlock selectedCity={selectedCity}/>
         </div>
       </div>
