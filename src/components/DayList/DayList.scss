@@ -1,4 +1,9 @@
 .day-list {
   display: flex;
   gap: 60px;
+
+  &__dates{
+    font-size: 24px;
+    margin-bottom: 50px;
+  }
 }

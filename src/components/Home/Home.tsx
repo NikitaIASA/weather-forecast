@@ -29,7 +29,6 @@ export const Home: FC<HomeProps> = ({
         setFromDate={setFromDate}
         setToDate={setToDate}
       />
-      <p className="days">Days</p>
       <DayList list={data || []}/>
     </Container>
   );
