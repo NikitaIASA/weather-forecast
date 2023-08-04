@@ -49,6 +49,7 @@ export const TripList: FC<TripListProps> = ({
     <>
       <Search value={searchQuery} onChange={setSearchQuery} />
       <div className="trip-list">
+        {searchQuery && filteredData.length === 0 && <p>Nothing found</p>}
         {filteredData.map((card) => (
           <TripCard
             key={card.id}
