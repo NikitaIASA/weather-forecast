@@ -10,6 +10,7 @@ import "./Home.scss";
 interface HomeProps {
   data?: Days;
   selectedCity: string;
+  fromDate: string;
   setSelectedCity: (city: string) => void;
   setFromDate: (date: string) => void;
   setToDate: (date: string) => void;
@@ -19,6 +20,7 @@ export const Home: FC<HomeProps> = ({
   data,
   selectedCity,
   setSelectedCity,
+  fromDate,
   setFromDate,
   setToDate,
 }) => {
@@ -37,7 +39,7 @@ export const Home: FC<HomeProps> = ({
           <DayList list={data || []} />
         </div>
         <div className="width-30">
-          <TodayBlock selectedCity={selectedCity}/>
+          <TodayBlock selectedCity={selectedCity} fromDate={fromDate}/>
         </div>
       </div>
     </Container>

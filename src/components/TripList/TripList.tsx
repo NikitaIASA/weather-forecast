@@ -16,15 +16,15 @@ const staticData = [
     id: 2,
     image: "Tokyo.jpg",
     city: "Tokyo",
-    fromDate: "2023-07-17",
-    toDate: "2023-07-23",
+    fromDate: "2023-08-17",
+    toDate: "2023-08-23",
   },
   {
     id: 3,
     image: "Barcelona.jpg",
     city: "Barcelona",
-    fromDate: "2023-07-16",
-    toDate: "2023-07-26",
+    fromDate: "2023-08-16",
+    toDate: "2023-08-26",
   },
 ];
 

@@ -6,12 +6,14 @@ import sun from "../../assets/clear-day.png";
 import clouds from "../../assets/partly-cloudy-day.png";
 
 import "./TodayBlock.scss";
+import Timer from "../Timer";
 
 interface TodayBlockProps {
   selectedCity: string;
+  fromDate: string;
 }
 
-export const TodayBlock: FC<TodayBlockProps> = ({ selectedCity }) => {
+export const TodayBlock: FC<TodayBlockProps> = ({ selectedCity, fromDate }) => {
   const { data, isError, isLoading } = useTodaysData({
     selectedCity,
   });
@@ -36,6 +38,7 @@ export const TodayBlock: FC<TodayBlockProps> = ({ selectedCity }) => {
             <p className="today-block__temperature">{Math.round(data?.temp)}<sup className="today-block__celcium">°C</sup></p>
           </div>
           <p className="today-block__city">{selectedCity}</p>
+          <Timer deadline={fromDate}/>
         </>
       )}
     </aside>

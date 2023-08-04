@@ -22,6 +22,7 @@ const WeatherPage: React.FC = () => {
       data={data}
       selectedCity={selectedCity}
       setSelectedCity={setSelectedCity}
+      fromDate={fromDate}
       setFromDate={setFromDate}
       setToDate={setToDate}
     />
