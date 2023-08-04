@@ -1,7 +1,7 @@
 import { FC } from "react";
-import sun from "../../assets/clear-day.jpg";
-import rain from "../../assets/rain.jpg";
-import clouds from "../../assets/partly-cloudy-day.jpg";
+import sun from "../../assets/clear-day.png";
+import rain from "../../assets/rain.png";
+import clouds from "../../assets/partly-cloudy-day.png";
 
 import "./DayCard.scss";
 
@@ -20,8 +20,7 @@ export const DayCard: FC<DayCardProps> = ({
   maxTemperature,
   minTemperature,
 }) => {
-  const weatherImage =
-    icon === "clear-day" ? sun : icon === "rain" ? rain : clouds;
+  const weatherImage = icon === "clear-day" ? sun : icon === "rain" ? rain : clouds;
 
   return (
     <div className="day-card">

@@ -4,8 +4,8 @@ import { useCityData } from "../api/useCityData";
 
 const WeatherPage: React.FC = () => {
   const [selectedCity, setSelectedCity] = useState("");
-  const [fromDate, setFromDate] = useState("2022-07-14");
-  const [toDate, setToDate] = useState("2022-07-21");
+  const [fromDate, setFromDate] = useState("");
+  const [toDate, setToDate] = useState("");
 
   const { data, isError } = useCityData({
     selectedCity,
@@ -18,14 +18,13 @@ const WeatherPage: React.FC = () => {
   }
 
   return (
-    <>
-      <Home
-        data={data}
-        setSelectedCity={setSelectedCity}
-        setFromDate={setFromDate}
-        setToDate={setToDate}
-      />
-    </>
+    <Home
+      data={data}
+      selectedCity={selectedCity}
+      setSelectedCity={setSelectedCity}
+      setFromDate={setFromDate}
+      setToDate={setToDate}
+    />
   );
 };
 

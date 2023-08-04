@@ -1,8 +1,7 @@
+import axios from "axios";
 import { useEffect } from 'react';
 import { useQuery } from "react-query";
-import axios from "axios";
 import { City, Days } from "./dto/getCityDto";
-// import { GetBreedsDto } from "./dto/get-breeds.dto";
 
 interface GetCityParams {
   selectedCity: string;
@@ -12,7 +11,7 @@ interface GetCityParams {
 
 const getCity = async ({ selectedCity, fromDate, toDate }: GetCityParams): Promise<Days> => {
   const { data } = await axios.get<City>(
-    `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${selectedCity}/${fromDate}/${toDate}?unitGroup=metric&include=days&key=LVQBUL4F72S9NJW3HMTN2G9TJ&contentType=json`
+    `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${selectedCity}/${fromDate}/${toDate}?unitGroup=metric&include=days&key=EL8RTZAZFF8422YZLCE6NG8YJ&contentType=json`
   );
 
   return data.days;

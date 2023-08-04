@@ -1,0 +1,30 @@
+.today-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    color: #fff;
+    gap: 20px;
+
+    &__date {
+        font-size: 36px;
+        font-weight: 700;
+    }
+
+    &__icon {
+        width: 100px;
+        height: 100px;
+        margin-bottom: -10px;
+    }
+
+    &__weather {
+        display: flex;
+        align-items: center;
+        font-size: 64px;
+    }
+
+    &__city {
+        font-size: 36px;
+    }
+}
