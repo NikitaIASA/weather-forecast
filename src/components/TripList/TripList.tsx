@@ -1,6 +1,7 @@
 import { FC, useState } from "react";
 import TripCard from "../TripCard";
 import Search from "../Search";
+import AddTripButton from "../AddTripButton";
 
 import "./TripList.scss";
 
@@ -26,6 +27,7 @@ const staticData = [
     fromDate: "2023-08-16",
     toDate: "2023-08-26",
   },
+  
 ];
 
 interface TripListProps {
@@ -61,6 +63,7 @@ export const TripList: FC<TripListProps> = ({
             }}
           />
         ))}
+        <AddTripButton/>
       </div>
     </>
   );
