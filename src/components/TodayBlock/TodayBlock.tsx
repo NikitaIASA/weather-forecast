@@ -18,7 +18,7 @@ export const TodayBlock: FC<TodayBlockProps> = ({ selectedCity, fromDate }) => {
     selectedCity,
   });
 
-  const weatherImage = data?.icon === "clear-day" ? sun : data?.icon === "rain" ? rain : data?.icon === "partly-cloudy-day" ? clouds : "";
+  const weatherImage = data?.icon === "clear-day" ? sun : data?.icon === "rain" ? rain : data?.icon === "cloudy" ? clouds : "";
 
   if (isLoading) {
     return <div className="today-block">Loading data...</div>;
