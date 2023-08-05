@@ -3,7 +3,8 @@ import { useTodaysData } from "../../api/useTodaysData";
 
 import rain from "../../assets/rain.png";
 import sun from "../../assets/clear-day.png";
-import clouds from "../../assets/partly-cloudy-day.png";
+import partlyClouds from "../../assets/partly-cloudy-day.png";
+import clouds from "../../assets/clouds.png";
 
 import "./TodayBlock.scss";
 import Timer from "../Timer";
@@ -18,7 +19,7 @@ export const TodayBlock: FC<TodayBlockProps> = ({ selectedCity, fromDate }) => {
     selectedCity,
   });
 
-  const weatherImage = data?.icon === "clear-day" ? sun : data?.icon === "rain" ? rain : data?.icon === "cloudy" ? clouds : "";
+  const weatherImage = data?.icon === "clear-day" ? sun : data?.icon === "rain" ? rain : data?.icon === "partly-cloudy-day" ? partlyClouds : data?.icon === "clouds" ? clouds : "";
 
   if (isLoading) {
     return <div className="today-block">Loading data...</div>;
