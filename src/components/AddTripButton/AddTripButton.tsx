@@ -2,11 +2,15 @@ import { FC } from "react";
 
 import "./AddTripButton.scss";
 
-interface AddTripButtonProps {}
+interface AddTripButtonProps {
+  onAddTripButtonClick: () => void;
+}
 
-export const AddTripButton: FC<AddTripButtonProps> = () => {
+export const AddTripButton: FC<AddTripButtonProps> = ({
+  onAddTripButtonClick,
+}) => {
   return (
-    <div className="add-trip">
+    <div className="add-trip" onClick={onAddTripButtonClick}>
       <span className="add-trip__plus">+</span>
       <p className="add-trip__text">Add trip</p>
     </div>
