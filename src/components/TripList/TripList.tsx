@@ -25,6 +25,7 @@ export const TripList: FC<TripListProps> = ({
   setFromDate,
   setToDate,
 }) => {
+
   return (
     <>
       <Search value={searchQuery} onChange={setSearchQuery} />

@@ -64,7 +64,15 @@ export const Home: FC<HomeProps> = ({
 }) => {
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const [trips, setTrips] = useState<staticDataIn[]>([...staticData]);
+
+  const [trips, setTrips] = useState<staticDataIn[]>(() => {
+    const storedTrips = JSON.parse(localStorage.getItem("trips") || "[]");
+    return storedTrips.length > 0 ? storedTrips : staticData;
+  });
+
+  useEffect(() => {
+    localStorage.setItem("trips", JSON.stringify(trips));
+  }, [trips]);
 
   const handleSave = (formData: FormData) => {
     const newTrip = {
@@ -74,7 +82,7 @@ export const Home: FC<HomeProps> = ({
       fromDate: formData.startDate,
       toDate: formData.endDate,
     };
-    
+
     setTrips([...trips, newTrip]);
     setIsModalOpen(false);
   };
@@ -88,9 +96,11 @@ export const Home: FC<HomeProps> = ({
     !isModalOpen && document.body.classList.remove("modal-open");
   }, [isModalOpen]);
 
-  const filteredData = trips && trips.filter((item) =>
-    item.city.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const filteredData =
+    trips &&
+    trips.filter((item) =>
+      item.city.toLowerCase().includes(searchQuery.toLowerCase())
+    );
 
   return (
     <Container>
