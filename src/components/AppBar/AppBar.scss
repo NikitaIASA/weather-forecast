@@ -1,0 +1,30 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 20px 20px 0;
+
+  &__title {
+    font-size: 36px;
+    font-weight: 400;
+
+    &--bold {
+      font-weight: 700;
+    }
+
+  }
+
+  &__navigation {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+  }
+
+}
+

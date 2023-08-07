@@ -5,6 +5,7 @@ import TripList from "../TripList";
 import DayList from "../DayList";
 import TodayBlock from "../TodayBlock";
 import Modal from "../AddTripModal";
+import AppBar from "../AppBar/AppBar";
 import { FormData } from "../AddTripModal/AddTripModal";
 
 import "./Home.scss";
@@ -106,9 +107,7 @@ export const Home: FC<HomeProps> = ({
     <Container>
       <div className="flex">
         <div className="width-70">
-          <h1 className="title">
-            Weather <span className="title__bold">ForeCast</span>
-          </h1>
+        <AppBar />
           <TripList
             trips={filteredData || []}
             searchQuery={searchQuery}

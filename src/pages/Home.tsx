@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import {FC, useState } from "react";
 import Home from "../components/Home";
 import { useCityData } from "../api/useCityData";
 
-const WeatherPage: React.FC = () => {
+const WeatherPage: FC = () => {
   const [selectedCity, setSelectedCity] = useState("");
   const [fromDate, setFromDate] = useState("");
   const [toDate, setToDate] = useState("");
@@ -21,9 +21,9 @@ const WeatherPage: React.FC = () => {
     <Home
       data={data}
       selectedCity={selectedCity}
-      setSelectedCity={setSelectedCity}
       fromDate={fromDate}
       isLoading={isLoading}
+      setSelectedCity={setSelectedCity}
       setFromDate={setFromDate}
       setToDate={setToDate}
     />
