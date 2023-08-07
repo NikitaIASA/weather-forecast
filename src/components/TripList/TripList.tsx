@@ -25,13 +25,14 @@ export const TripList: FC<TripListProps> = ({
   setFromDate,
   setToDate,
 }) => {
-
+  const sortedTrips = trips.slice().sort((a, b) => a.fromDate.localeCompare(b.fromDate));
+  
   return (
     <>
       <Search value={searchQuery} onChange={setSearchQuery} />
       <div className="trip-list">
         {searchQuery && trips.length === 0 && <p>Nothing found</p>}
-        {trips.map((card) => (
+        {sortedTrips.map((card) => (
           <TripCard
             key={card.id}
             {...card}
@@ -42,7 +43,7 @@ export const TripList: FC<TripListProps> = ({
             }}
           />
         ))}
-        <AddTripButton onAddTripButtonClick={() => setIsModalOpen(true)}/>
+        <AddTripButton onAddTripButtonClick={() => setIsModalOpen(true)} />
       </div>
     </>
   );
