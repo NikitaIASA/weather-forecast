@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Days } from "../../api/dto/getCityDto";
+import { Days } from "../../../api/dto/getCityDto";
 import DayCard from "../DayCard";
 
 import "./DayList.scss";

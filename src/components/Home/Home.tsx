@@ -1,12 +1,12 @@
 import { FC, useState, useEffect } from "react";
 import { Days } from "../../api/dto/getCityDto";
-import Container from "../Container";
-import TripList from "../TripList";
-import DayList from "../DayList";
-import TodayBlock from "../TodayBlock";
-import Modal from "../AddTripModal";
+import Container from "../UI/Container";
+import TripList from "../Trips/TripList";
+import DayList from "../Days/DayList";
+import TodayBlock from "../Trips/TodayBlock";
+import Modal from "../Trips/AddTripModal";
 import AppBar from "../AppBar/AppBar";
-import { FormData } from "../AddTripModal/AddTripModal";
+import { FormData } from "../Trips/AddTripModal/AddTripModal";
 import { staticDataIn, staticData, cities } from "./staticData";
 
 import "./Home.scss";

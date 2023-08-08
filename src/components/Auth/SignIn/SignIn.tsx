@@ -1,7 +1,7 @@
 import {FC, useEffect} from "react";
 import { useNavigate } from "react-router-dom";
-import { useUserAuth } from '../../context/AuthContext';
-import logo from "../../assets/logo.avif";
+import { useUserAuth } from '../../../context/AuthContext';
+import logo from "../../../assets/logo.avif";
 
 import "./SignIn.scss";
 

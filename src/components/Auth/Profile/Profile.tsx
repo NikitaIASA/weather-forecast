@@ -1,6 +1,6 @@
 import { FC } from "react";
-import logo from "../../assets/logo.avif"
-import { useUserAuth } from "../../context/AuthContext";
+import logo from "../../../assets/logo.avif";
+import { useUserAuth } from "../../../context/AuthContext";
 
 import "./Profile.scss";
 

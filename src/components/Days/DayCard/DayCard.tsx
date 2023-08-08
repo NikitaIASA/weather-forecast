@@ -1,8 +1,8 @@
 import { FC } from "react";
-import sun from "../../assets/clear-day.png";
-import rain from "../../assets/rain.png";
-import partlyClouds from "../../assets/partly-cloudy-day.png";
-import clouds from "../../assets/clouds.png";
+import sun from "../../../assets/clear-day.png";
+import rain from "../../../assets/rain.png";
+import partlyClouds from "../../../assets/partly-cloudy-day.png";
+import clouds from "../../../assets/clouds.png";
 
 import "./DayCard.scss";
 

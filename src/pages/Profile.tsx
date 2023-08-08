@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import Profile from "../components/Profile";
+import Profile from "../components/Auth/Profile";
 
 const ProfilePage: FC = () => <Profile />;
 

@@ -2,7 +2,7 @@ import { FC } from "react";
 import { Routes, Route } from "react-router-dom";
 import { PrivateRoute } from "./components/Routes/PrivateRoute";
 import { ProtectedRoute } from "./components/Routes/ProtectedRoute";
-import Layout from "./components/Layout";
+import Layout from "./components/UI/Layout";
 import WeatherPage from "./pages/Home";
 import SignIn from "./pages/SignIn";
 import Profile from "./pages/Profile";

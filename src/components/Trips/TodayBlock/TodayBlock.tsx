@@ -1,14 +1,14 @@
 import { FC } from "react";
-import { useTodaysData } from "../../api/useTodaysData";
-import { useWeatherContext } from "../../context/WeatherContext";
+import { useTodaysData } from "../../../api/useTodaysData";
+import { useWeatherContext } from "../../../context/WeatherContext";
 
-import rain from "../../assets/rain.png";
-import sun from "../../assets/clear-day.png";
-import partlyClouds from "../../assets/partly-cloudy-day.png";
-import clouds from "../../assets/clouds.png";
+import rain from "../../../assets/rain.png";
+import sun from "../../../assets/clear-day.png";
+import partlyClouds from "../../../assets/partly-cloudy-day.png";
+import clouds from "../../../assets/clouds.png";
 
 import "./TodayBlock.scss";
-import Timer from "../Timer";
+import Timer from "../../Timer";
 
 interface TodayBlockProps {}
 

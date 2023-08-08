@@ -1,9 +1,9 @@
 import { FC } from "react";
 import TripCard from "../TripCard";
-import Search from "../Search";
-import AddTripButton from "../AddTripButton";
-import { useWeatherContext } from "../../context/WeatherContext";
-import { staticDataIn } from "../Home/Home";
+import Search from "../../UI/Search";
+import AddTripButton from "../../UI/AddTripButton";
+import { useWeatherContext } from "../../../context/WeatherContext";
+import { staticDataIn } from "../../Home/staticData";
 
 import "./TripList.scss";
 
