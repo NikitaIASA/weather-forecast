@@ -19,13 +19,12 @@ const handleModalClick = (event: React.MouseEvent<HTMLDivElement>) => {
   event.stopPropagation();
 };
 
-// TASK: to fix bug with Date comparison 
-
 export const Modal: FC<ModalProps> = ({ cities, onSave, onCancel }) => {
   const {
     handleSubmit,
     control,
     reset,
+    watch,
     formState: { errors },
   } = useForm<FormData>({
     defaultValues: {
@@ -34,6 +33,11 @@ export const Modal: FC<ModalProps> = ({ cities, onSave, onCancel }) => {
       endDate: "",
     },
   });
+
+  const startDate = watch("startDate");
+  const endDate = watch("endDate");
+
+  const isSaveDisabled = new Date(startDate) >= new Date(endDate);
 
   return (
     <div className="modal" onClick={onCancel}>
@@ -141,8 +145,19 @@ export const Modal: FC<ModalProps> = ({ cities, onSave, onCancel }) => {
             >
               Cancel
             </button>
-            <button type="submit">Save</button>
+            <button
+              type="submit"
+              className={isSaveDisabled ? "disabled" : ""}
+              disabled={isSaveDisabled}
+            >
+              Save
+            </button>
           </div>
+          {isSaveDisabled && (
+            <p className="error-message">
+              The start date of the trip cannot be later than the end date
+            </p>
+          )}
         </form>
       </div>
     </div>
