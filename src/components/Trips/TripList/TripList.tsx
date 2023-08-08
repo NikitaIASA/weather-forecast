@@ -20,32 +20,31 @@ export const TripList: FC<TripListProps> = ({
   setSearchQuery,
   setIsModalOpen,
 }) => {
+  const { setSelectedCity, setFromDate, setToDate } = useWeatherContext();
+  const sortedTrips = trips
+    .slice()
+    .sort((a, b) => a.fromDate.localeCompare(b.fromDate));
 
-  const {
-    setSelectedCity,
-    setFromDate,
-    setToDate,
-  } = useWeatherContext(); 
-  const sortedTrips = trips.slice().sort((a, b) => a.fromDate.localeCompare(b.fromDate));
-  
   return (
     <>
       <Search value={searchQuery} onChange={setSearchQuery} />
-      <div className="trip-list">
-        {searchQuery && trips.length === 0 && <p>Nothing found</p>}
-        {sortedTrips.map((card) => (
-          <TripCard
-            key={card.id}
-            {...card}
-            onClick={() => {
-              setSelectedCity(card.city);
-              setFromDate(card.fromDate);
-              setToDate(card.toDate);
-            }}
-          />
-        ))}
+      <section className="trip-list">
+        <div className="trip-list__trips">
+          {searchQuery && trips.length === 0 && <p>Nothing found</p>}
+          {sortedTrips.map((card) => (
+            <TripCard
+              key={card.id}
+              {...card}
+              onClick={() => {
+                setSelectedCity(card.city);
+                setFromDate(card.fromDate);
+                setToDate(card.toDate);
+              }}
+            />
+          ))}
+        </div>
         <AddTripButton onAddTripButtonClick={() => setIsModalOpen(true)} />
-      </div>
+      </section>
     </>
   );
 };
