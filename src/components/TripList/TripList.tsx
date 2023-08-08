@@ -2,6 +2,7 @@ import { FC } from "react";
 import TripCard from "../TripCard";
 import Search from "../Search";
 import AddTripButton from "../AddTripButton";
+import { useWeatherContext } from "../../context/WeatherContext";
 import { staticDataIn } from "../Home/Home";
 
 import "./TripList.scss";
@@ -11,9 +12,6 @@ interface TripListProps {
   searchQuery: string;
   setSearchQuery: (query: string) => void;
   setIsModalOpen: (modal: boolean) => void;
-  setSelectedCity: (city: string) => void;
-  setFromDate: (date: string) => void;
-  setToDate: (date: string) => void;
 }
 
 export const TripList: FC<TripListProps> = ({
@@ -21,10 +19,13 @@ export const TripList: FC<TripListProps> = ({
   searchQuery,
   setSearchQuery,
   setIsModalOpen,
-  setSelectedCity,
-  setFromDate,
-  setToDate,
 }) => {
+
+  const {
+    setSelectedCity,
+    setFromDate,
+    setToDate,
+  } = useWeatherContext(); 
   const sortedTrips = trips.slice().sort((a, b) => a.fromDate.localeCompare(b.fromDate));
   
   return (

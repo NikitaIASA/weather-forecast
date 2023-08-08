@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { useTodaysData } from "../../api/useTodaysData";
+import { useWeatherContext } from "../../context/WeatherContext";
 
 import rain from "../../assets/rain.png";
 import sun from "../../assets/clear-day.png";
@@ -9,15 +10,12 @@ import clouds from "../../assets/clouds.png";
 import "./TodayBlock.scss";
 import Timer from "../Timer";
 
-interface TodayBlockProps {
-  selectedCity: string;
-  fromDate: string;
-}
+interface TodayBlockProps {}
 
-export const TodayBlock: FC<TodayBlockProps> = ({ selectedCity, fromDate }) => {
-  const { data, isError, isLoading } = useTodaysData({
-    selectedCity,
-  });
+export const TodayBlock: FC<TodayBlockProps> = () => {
+  const { selectedCity, fromDate} = useWeatherContext(); 
+
+  const { data, isError, isLoading } = useTodaysData({selectedCity});
 
   const weatherImage = data?.icon === "clear-day" ? sun : data?.icon === "rain" ? rain : data?.icon === "partly-cloudy-day" ? partlyClouds : data?.icon === "clouds" ? clouds : "";
 

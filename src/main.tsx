@@ -3,6 +3,7 @@ import { BrowserRouter } from "react-router-dom";
 import { QueryClientProvider } from "react-query";
 import { queryClient } from "./core/queryClient";
 import { AuthProvider } from "./context/AuthContext";
+import { WeatherProvider } from "./context/WeatherContext";
 import { SnackbarProvider } from "notistack";
 import { App } from "./App";
 
@@ -13,7 +14,9 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <BrowserRouter>
       <SnackbarProvider>
         <AuthProvider>
-          <App />
+          <WeatherProvider>
+            <App />
+          </WeatherProvider>
         </AuthProvider>
       </SnackbarProvider>
     </BrowserRouter>
