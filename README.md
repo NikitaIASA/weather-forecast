@@ -9,7 +9,7 @@ Test project.
 3. The app should include a button for adding a new trip. When the user clicks on "Add trip," a modal window should appear. Inside the modal, the user should have the ability to: ✔
   - Choose a city from a predefined list (you should have a mock list of cities that the API supports, with images). ✔
   - Enter the start date of the trip (the start date should be within the next 15 days). ✔
-  - Enter the end date of the trip (the end date should be within the next 15 days).
+  - Enter the end date of the trip (the end date should be within the next 15 days). ✔
 4. On the right side of the page: ✔
   - When user selects a trip, today's weather forecast for that city should be displayed. ✔
   - There should be a countdown timer from the current date to the start date of the trip. ✔
