@@ -12,11 +12,11 @@ const WeatherPage: FC = () => {
     toDate,
   });
 
-  if (isError) {
-    return <div>Error occurred while fetching data</div>;
-  }
+  // if (isError) {
+  //   return <div>Error occurred while fetching data</div>;
+  // }
 
-  return <Home data={data} isLoading={isLoading} />;
+  return <Home data={data} isLoading={isLoading} isError={isError} />;
 };
 
 export default WeatherPage;

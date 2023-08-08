@@ -14,11 +14,13 @@ import "./Home.scss";
 interface HomeProps {
   data?: Days;
   isLoading: boolean;
+  isError: boolean;
 }
 
 export const Home: FC<HomeProps> = ({
   data,
   isLoading,
+  isError
 }) => {
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -78,7 +80,7 @@ export const Home: FC<HomeProps> = ({
               onCancel={handleCancel}
             />
           )}
-          <DayList list={data || []} isLoading={isLoading} />
+          <DayList list={data || []} isLoading={isLoading} isError={isError} />
         </div>
         <div className="width-30">
         <TodayBlock/>
