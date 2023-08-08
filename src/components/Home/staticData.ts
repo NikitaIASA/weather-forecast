@@ -30,4 +30,4 @@ export const staticData: staticDataIn[] = [
     },
 ];
 
-export const cities = ["Mariupol", "Madrid", "Venezia"];
+export const cities = ["Mariupol", "Madrid", "Venezia", "Barcelona", "Tokyo", "Berlin"];
