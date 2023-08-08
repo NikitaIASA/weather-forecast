@@ -14,7 +14,6 @@ interface TodayBlockProps {}
 
 export const TodayBlock: FC<TodayBlockProps> = () => {
   const { selectedCity, fromDate} = useWeatherContext(); 
-
   const { data, isError, isLoading } = useTodaysData({selectedCity});
 
   const weatherImage = data?.icon === "clear-day" ? sun : data?.icon === "rain" ? rain : data?.icon === "partly-cloudy-day" ? partlyClouds : data?.icon === "clouds" ? clouds : "";
@@ -29,7 +28,7 @@ export const TodayBlock: FC<TodayBlockProps> = () => {
 
   return (
     <aside className="today-block">
-      {data && (
+      {data ? (
         <>
           <p className="today-block__date">{data?.datetime}</p>
           <div className="today-block__weather">
@@ -39,6 +38,8 @@ export const TodayBlock: FC<TodayBlockProps> = () => {
           <p className="today-block__city">{selectedCity}</p>
           <Timer deadline={fromDate}/>
         </>
+      ) : (
+        <p className="today-block__choice">Choose your trip</p>
       )}
     </aside>
   );
