@@ -1,8 +1,15 @@
+@import "../../scss/index.scss";
+
 .timer {
   display: flex;
   gap: 50px;
   font-size: 24px;
   margin-top: 150px;
+
+  @include onBig-desktop {
+    gap: 25px;
+    font-size: 18px;
+  }
 
   &__item {
     display: flex;
@@ -13,6 +20,10 @@
   &__time {
     font-weight: 800;
     font-size: 36px;
+
+    @include onBig-desktop {
+      font-size: 24px;
   }
 
+  }
 }

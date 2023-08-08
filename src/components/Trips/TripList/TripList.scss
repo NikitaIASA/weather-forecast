@@ -1,9 +1,17 @@
+@import "../../../scss/index.scss";
+
 .trip-list {
+  display: flex;
+  flex-direction: column;
   padding: 50px 0 40px 0;
 
   &__row {
     display: flex;
     gap: 50px;
+
+    @include onBig-desktop {
+      flex-direction: column;
+    }
   }
 
   &__trips {
@@ -12,6 +20,9 @@
     max-width: 700px;
     gap: 50px;
 
+    @include onBig-desktop {
+      max-width: none;
+    }
     // &::-webkit-scrollbar { // optional
     //   display: none;
     // }
@@ -25,6 +36,11 @@
     img {
       cursor: pointer;
     }
-    
+  }
+
+  &__nothing-found {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

@@ -1,3 +1,5 @@
+@import "../../../scss/index.scss";
+
 .trip-search {
   display: flex;
   align-items: center;
@@ -9,6 +11,10 @@
   padding: 10px 0 10px 20px; 
   border-radius: 10px;
   color: #000;
+
+  @include onTablet {
+    width: 100%;
+  }
 
   &__icon {
     margin-right: 10px;

@@ -1,4 +1,11 @@
+@import "../../../scss/index.scss";
+
 .container {
   padding-left: 20px;
   margin: 0 auto;
+
+  @include onBig-tablet {
+    padding: 0 20px;
+  }
+  
 }

@@ -1,3 +1,5 @@
+@import "../../../scss/index.scss";
+
 .add-trip {
   display: flex;
   flex-direction: column;
@@ -6,8 +8,12 @@
   width: 190px;
   height: 180px;
   background-color: #f3f4f8;
-  transition: .3s linear;
+  transition: 0.3s linear;
   cursor: pointer;
+
+  @include onBig-desktop {
+    order: -1;
+  }
 
   &:hover {
     background-color: darken(#f3f4f8, 3%);

@@ -1,3 +1,5 @@
+@import "../../../scss/index.scss";
+
 .today-block {
     display: flex;
     flex-direction: column;
@@ -7,10 +9,18 @@
     color: #fff;
     gap: 20px;
     font-size: 24px;
+
+    @include onBig-desktop {
+        font-size: 18px;
+    }
     
     &__date {
         font-size: 36px;
         font-weight: 700;
+        
+        @include onBig-desktop {
+            font-size: 18px;
+        }
     }
 
     &__icon {

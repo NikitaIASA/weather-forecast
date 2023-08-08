@@ -50,7 +50,7 @@ export const TripList: FC<TripListProps> = ({
       <div className="trip-list">
         <div className="trip-list__row">
           <div className="trip-list__trips" ref={contentWrapper}>
-            {searchQuery && trips.length === 0 && <p>Nothing found</p>}
+            {searchQuery && trips.length === 0 && <p className="trip-list__nothing-found">Nothing found</p>}
             {sortedTrips.map((card) => (
               <TripCard
                 key={card.id}

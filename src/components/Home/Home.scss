@@ -1,14 +1,29 @@
+@import "../../scss/index.scss";
+
 .flex {
-    display: flex;
+  display: flex;
+
+  @include onBig-tablet {
+    flex-direction: column;
+  }
 }
 
 .width-70 {
   width: 70%;
+
+  @include onBig-tablet {
+    width: 100%;
+  }
 }
 
 .width-30 {
-    width: 30%;
-    display: flex;
-    background-color: #110e3b;
-    height: 100vh;
+  width: 30%;
+  display: flex;
+  background-color: #110e3b;
+  height: 100vh;
+
+  @include onBig-tablet {
+    width: 100%;
+  }
+
 }
