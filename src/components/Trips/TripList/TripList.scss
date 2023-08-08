@@ -15,13 +15,16 @@
     // &::-webkit-scrollbar { // optional
     //   display: none;
     // }
-
   }
 
   &__buttons {
     display: flex;
     gap: 5px;
     margin-top: 10px;
+
+    img {
+      cursor: pointer;
+    }
+    
   }
-  
 }

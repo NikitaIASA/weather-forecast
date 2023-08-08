@@ -65,22 +65,24 @@ export const TripList: FC<TripListProps> = ({
           </div>
           <AddTripButton onAddTripButtonClick={() => setIsModalOpen(true)} />
         </div>
-        <div className="trip-list__buttons">
-          <img
-            src={backArrow}
-            alt="back arrow"
-            onClick={() => {
-              sideScroll(contentWrapper.current!, 20, 235, -10);
-            }}
-          ></img>
-          <img
-            src={nextArrow}
-            alt="next arrow"
-            onClick={() => {
-              sideScroll(contentWrapper.current!, 20, 235, 10);
-            }}
-          ></img>
-        </div>
+        {sortedTrips.length > 3 && (
+          <div className="trip-list__buttons">
+            <img
+              src={backArrow}
+              alt="back arrow"
+              onClick={() => {
+                sideScroll(contentWrapper.current!, 20, 235, -10);
+              }}
+            ></img>
+            <img
+              src={nextArrow}
+              alt="next arrow"
+              onClick={() => {
+                sideScroll(contentWrapper.current!, 20, 235, 10);
+              }}
+            ></img>
+          </div>
+        )}
       </div>
     </>
   );
