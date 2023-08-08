@@ -1,7 +1,6 @@
 .day-card {
   display: flex;
   flex-direction: column;
-  gap: 20px;
   justify-content: center;
   align-items: center;
 
@@ -12,5 +11,6 @@
   &__image {
     width: 55px;
     height: 55px;
+    margin: 20px 0;
   }
 }

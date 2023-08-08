@@ -11,7 +11,7 @@ interface DayListProps {
 }
 
 export const DayList: FC<DayListProps> = ({ list, isLoading, isError }) => {
-  
+
   if (isLoading) {
     return <p>Loading...</p>;
   }

@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { format, parseISO } from 'date-fns';
 import sun from "../../../assets/clear-day.png";
 import rain from "../../../assets/rain.png";
 import partlyClouds from "../../../assets/partly-cloudy-day.png";
@@ -25,6 +26,7 @@ export const DayCard: FC<DayCardProps> = ({
 
   return (
     <div className="day-card">
+      <p className="day-card__date">{format(parseISO(date), 'EEEE')}</p>
       <p className="day-card__date">{date}</p>
       <img className="day-card__image" src={weatherImage} alt={conditions} />
       <p className="day-card__temperature">{`${Math.round(minTemperature)}° / ${Math.round(maxTemperature)}°`}</p>

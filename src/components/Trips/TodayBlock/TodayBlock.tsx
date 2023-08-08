@@ -1,14 +1,14 @@
 import { FC } from "react";
+import { format, parseISO } from 'date-fns';
+import Timer from "../../Timer";
 import { useTodaysData } from "../../../api/useTodaysData";
 import { useWeatherContext } from "../../../context/WeatherContext";
-
 import rain from "../../../assets/rain.png";
 import sun from "../../../assets/clear-day.png";
 import partlyClouds from "../../../assets/partly-cloudy-day.png";
 import clouds from "../../../assets/clouds.png";
 
 import "./TodayBlock.scss";
-import Timer from "../../Timer";
 
 interface TodayBlockProps {}
 
@@ -30,7 +30,7 @@ export const TodayBlock: FC<TodayBlockProps> = () => {
     <aside className="today-block">
       {data ? (
         <>
-          <p className="today-block__date">{data?.datetime}</p>
+          <p className="today-block__date">{format(parseISO(data.datetime), 'EEEE')}</p>
           <div className="today-block__weather">
             <img className="today-block__icon" src={weatherImage} alt="rainy" />
             <p className="today-block__temperature">{Math.round(data?.temp)}<sup className="today-block__celcium">°C</sup></p>
