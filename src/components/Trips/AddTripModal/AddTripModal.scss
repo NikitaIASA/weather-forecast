@@ -23,6 +23,25 @@
     border-radius: 8px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     width: 620px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      border-top: 1px solid #ccc;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 80px;
+      left: 0;
+      right: 0;
+      border-top: 1px solid #ccc;
+    }
   }
 
   &__title {
@@ -35,50 +54,59 @@
 
     label {
       display: block;
-      margin-bottom: 10px;
+      margin: 0 0 10px 7px;
+      position: relative;
+
+      &::before {
+        position: absolute;
+        left: -7px;
+        content: "*";
+        color: red;
+      }
+      
     }
+    select,
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+
   }
 
   &__form {
     margin: 75px 0;
   }
-}
 
-.modal__form-group select,
-.modal__form-group input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
+  &__buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+
+    button {
+      padding: 7px 15px;
+      margin-left: 10px;
+      border: none;
+      cursor: pointer;
+
+      &:first-child {
+        background-color: transparent;
+        border: 1px solid grey;
+      }
+
+      &:last-child {
+        background-color: #007bff;
+        color: white;
+
+        &.disabled {
+          background-color: #ccc;
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
 }
 
 .error-message {
   color: red;
-}
-
-.modal__buttons {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 20px;
-}
-
-.modal__buttons button {
-  padding: 7px 15px;
-  margin-left: 10px;
-  border: none;
-  cursor: pointer;
-}
-
-.modal__buttons button:first-child {
-  background-color: transparent;
-  border: 1px solid grey;
-}
-
-.modal__buttons button:last-child {
-  background-color: #007bff;
-  color: white;
-
-  &.disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
 }
