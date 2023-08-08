@@ -11,7 +11,7 @@ interface GetCityParams {
 
 const getCity = async ({ selectedCity, fromDate, toDate }: GetCityParams): Promise<Days> => {
   const { data } = await axios.get<City>(
-    `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${selectedCity}/${fromDate}/${toDate}?unitGroup=metric&include=days&key=${import.meta.env.VITE_API_KEY}&contentType=json`
+    `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${selectedCity}/${fromDate}/${toDate}?unitGroup=metric&include=days&key=${import.meta.env.VITE_VERCEL_API_KEY}&contentType=json`
   );
 
   return data.days;

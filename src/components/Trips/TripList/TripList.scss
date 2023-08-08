@@ -1,14 +1,27 @@
 .trip-list {
+  padding: 50px 0 40px 0;
+
+  &__row {
     display: flex;
     gap: 50px;
-    padding: 50px 0 40px 0;
-}
+  }
 
-.trip-list__trips {
+  &__trips {
     display: flex;
     overflow-x: auto;
     max-width: 700px;
-    // flex-wrap: wrap;
     gap: 50px;
-   
+
+    // &::-webkit-scrollbar { // optional
+    //   display: none;
+    // }
+
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+  }
+  
 }

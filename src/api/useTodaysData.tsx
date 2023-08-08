@@ -9,7 +9,7 @@ interface getTodaysDataParams {
 
 const getTodaysData = async ({ selectedCity,}: getTodaysDataParams): Promise<Day> => {
   const { data } = await axios.get<Today>(
-    `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${selectedCity}/today?unitGroup=metric&include=days&key=${import.meta.env.VITE_API_KEY}&contentType=json`
+    `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${selectedCity}/today?unitGroup=metric&include=days&key=${import.meta.env.VITE_VERCEL_API_KEY}&contentType=json`
   );
 
   return data.days[0];
