@@ -7,12 +7,12 @@ Test project.
 1. Static list of trips. The list should be scrollable. ✔
 2. There should be a possibility to search for a trip ✔
 3. The app should include a button for adding a new trip. When the user clicks on "Add trip," a modal window should appear. Inside the modal, the user should have the ability to: ✔
-a. Choose a city from a predefined list (you should have a mock list of cities that the API supports, with images). ✔
-b. Enter the start date of the trip (the start date should be within the next 15 days). ✔
-c. Enter the end date of the trip (the end date should be within the next 15 days). ✔
+  - Choose a city from a predefined list (you should have a mock list of cities that the API supports, with images). ✔
+  - Enter the start date of the trip (the start date should be within the next 15 days). ✔
+  - Enter the end date of the trip (the end date should be within the next 15 days).
 4. On the right side of the page: ✔
-a. When user selects a trip, today's weather forecast for that city should be displayed. ✔
-b. There should be a countdown timer from the current date to the start date of the trip. ✔
+  - When user selects a trip, today's weather forecast for that city should be displayed. ✔
+  - There should be a countdown timer from the current date to the start date of the trip. ✔
 5. Implement next and previous buttons for the list to handle scrolling better ✔
 6. Sort trips by start trip date ✔
 7. Implement login through third-party providers (Gmail, Facebook, etc.) - at least one of ✔
