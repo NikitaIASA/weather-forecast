@@ -1,3 +1,5 @@
+@import "../../../scss/index.scss";
+
 .day-card {
   display: flex;
   flex-direction: column;
@@ -5,7 +7,7 @@
   align-items: center;
 
   &__date {
-    color: grey;
+    color: $grey;
   }
   
   &__image {

@@ -19,7 +19,7 @@
 .width-30 {
   width: 30%;
   display: flex;
-  background-color: #110e3b;
+  background-color: $purple;
   height: 100vh;
 
   @include onBig-tablet {

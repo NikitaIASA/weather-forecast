@@ -7,7 +7,7 @@
   justify-content: center;
   width: 190px;
   height: 180px;
-  background-color: #f3f4f8;
+  background-color: $grey-f2;
   transition: 0.3s linear;
   cursor: pointer;
 
@@ -16,7 +16,7 @@
   }
 
   &:hover {
-    background-color: darken(#f3f4f8, 3%);
+    background-color: darken($grey-f2, 3%);
   }
 
   &__plus {

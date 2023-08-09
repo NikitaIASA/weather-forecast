@@ -1,9 +1,11 @@
+@import "../../../scss/index.scss";
+
 .trip-card {
   display: flex;
   flex-direction: column;
   transition: 0.3s linear;
   cursor: pointer;
-  border: 1px solid lightgrey;
+  border: 1px solid $light-grey;
 
   &__description {
     padding: 16px;
