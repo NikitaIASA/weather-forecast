@@ -39,7 +39,7 @@ export const TripList: FC<TripListProps> = ({
   setIsModalOpen,
 }) => {
   const contentWrapper = useRef<HTMLDivElement | null>(null);
-  const { setSelectedCity, setFromDate, setToDate } = useWeatherContext();
+  const { selectedCity, setSelectedCity, setFromDate, setToDate } = useWeatherContext();
   const sortedTrips = trips
     .slice()
     .sort((a, b) => a.fromDate.localeCompare(b.fromDate));
@@ -54,6 +54,7 @@ export const TripList: FC<TripListProps> = ({
             {sortedTrips.map((card) => (
               <TripCard
                 key={card.id}
+                selectedCity={selectedCity}
                 {...card}
                 onClick={() => {
                   setSelectedCity(card.city);

@@ -22,7 +22,7 @@
   &__date {
     color: grey;
   }
-  &:hover {
+  &:hover, &.active {
     border: 1px solid lightskyblue;
   }
 }
