@@ -1,4 +1,4 @@
-import { FC, useRef } from "react";
+import { FC, useState, useRef } from "react";
 import TripCard from "../TripCard";
 import Search from "../../UI/Search";
 import AddTripButton from "../../UI/AddTripButton";
@@ -39,8 +39,10 @@ export const TripList: FC<TripListProps> = ({
   setSearchQuery,
   setIsModalOpen,
 }) => {
+  
+  const [selectedCard, setSelectedCard] = useState<number | null>(null); 
   const contentWrapper = useRef<HTMLDivElement | null>(null); // Wrapper for horizontal scrool
-  const { selectedCity, setSelectedCity, setFromDate, setToDate } = useWeatherContext(); // Getting our data of selectred trip
+  const { setSelectedCity, setFromDate, setToDate } = useWeatherContext(); // Getting our data of selectred trip
   const sortedTrips = trips && trips
     .slice()
     .sort((a, b) => a.fromDate.localeCompare(b.fromDate)); // Sort trips by start trip date
@@ -55,12 +57,13 @@ export const TripList: FC<TripListProps> = ({
             {sortedTrips && sortedTrips.map((card) => (
               <TripCard
                 key={card.id}
-                selectedCity={selectedCity}
+                isSelected={card.id === selectedCard}
                 {...card}
                 onClick={() => {
                   setSelectedCity(card.city);
                   setFromDate(card.fromDate);
                   setToDate(card.toDate);
+                  setSelectedCard(card.id);
                 }}
               />
             ))}

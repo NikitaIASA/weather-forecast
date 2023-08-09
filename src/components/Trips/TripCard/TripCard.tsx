@@ -7,7 +7,7 @@ export interface TripCardProps {
   city: string;
   fromDate: string;
   toDate: string;
-  selectedCity: string | null;
+  isSelected: boolean;
   onClick: () => void;
 }
 
@@ -16,13 +16,12 @@ export const TripCard: FC<TripCardProps> = ({
   city,
   fromDate,
   toDate,
-  selectedCity,
+  isSelected,
   onClick,
 }) => {
-  const isActive = selectedCity === city;
 
   return (
-    <div className={`trip-card ${isActive ? "active" : ""}`}  onClick={onClick}>
+    <div className={`trip-card ${isSelected ? "active" : ""}`} onClick={onClick}>
       <img className="trip-card__image" src={image} alt="city image" />
       <div className="trip-card__description">
         <p className="trip-card__city">{city}</p>
