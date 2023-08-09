@@ -15,11 +15,12 @@ export interface FormData {
   endDate: string;
 }
 
+// Prevent click propagation within the modal (to close modal when user clicks outside it)
 const handleModalClick = (event: React.MouseEvent<HTMLDivElement>) => {
   event.stopPropagation();
 };
 
-export const Modal: FC<ModalProps> = ({ cities, onSave, onCancel }) => {
+export const Modal: FC<ModalProps> = ({ cities, onSave, onCancel }) => { // Our form data using react-hook-forms
   const {
     handleSubmit,
     control,
@@ -34,9 +35,9 @@ export const Modal: FC<ModalProps> = ({ cities, onSave, onCancel }) => {
     },
   });
 
+  // Determine if Save button should be disabled
   const startDate = watch("startDate");
   const endDate = watch("endDate");
-
   const isSaveDisabled = new Date(startDate) >= new Date(endDate);
 
   return (
@@ -70,7 +71,7 @@ export const Modal: FC<ModalProps> = ({ cities, onSave, onCancel }) => {
                 render={({ field }) => (
                   <select {...field} id="city">
                     <option value="">Please select a city</option>
-                    {cities.map((city) => (
+                    {cities && cities.map((city) => (
                       <option key={city} value={city}>
                         {city}
                       </option>

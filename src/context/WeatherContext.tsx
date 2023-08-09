@@ -16,6 +16,8 @@ interface WeatherProviderProps {
 }
 
 export const WeatherProvider: React.FC<WeatherProviderProps> = ({ children }) => {
+  
+  // States for our selected trip
   const [selectedCity, setSelectedCity] = useState("");
   const [fromDate, setFromDate] = useState("");
   const [toDate, setToDate] = useState("");
@@ -36,6 +38,7 @@ export const WeatherProvider: React.FC<WeatherProviderProps> = ({ children }) =>
   );
 };
 
+// Hook for using WeatherContext properties in components
 export const useWeatherContext = (): WeatherContextProps => {
   const context = useContext(WeatherContext);
   if (!context) {

@@ -22,18 +22,22 @@ export const Home: FC<HomeProps> = ({
   isLoading,
   isError
 }) => {
+  // State for search query, modal state, and trips data
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
+  // State for storing trip data in localStorage
   const [trips, setTrips] = useState<staticDataIn[]>(() => {
     const storedTrips = JSON.parse(localStorage.getItem("trips") || "[]");
     return storedTrips.length > 0 ? storedTrips : staticData;
   });
 
+  // Save trips data to localStorage when it changes
   useEffect(() => {
     localStorage.setItem("trips", JSON.stringify(trips));
   }, [trips]);
 
+  // Function to handle saving new trip data
   const handleSave = (formData: FormData) => {
     const newTrip = {
       id: trips.length + 1,
@@ -51,11 +55,13 @@ export const Home: FC<HomeProps> = ({
     setIsModalOpen(false);
   };
 
+  // Update body class when modal is open or closed
   useEffect(() => {
     isModalOpen && document.body.classList.add("modal-open");
     !isModalOpen && document.body.classList.remove("modal-open");
   }, [isModalOpen]);
 
+  // Filter trips based on search query
   const filteredData =
     trips &&
     trips.filter((item) =>

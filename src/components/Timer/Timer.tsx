@@ -6,6 +6,7 @@ interface TimerProps {
   deadline: string;
 }
 
+// Timer logic
 export const Timer: FC<TimerProps> = ({ deadline }) => {
   const [days, setDays] = useState(0);
   const [hours, setHours] = useState(0);

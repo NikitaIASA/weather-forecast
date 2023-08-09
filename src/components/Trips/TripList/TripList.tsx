@@ -16,6 +16,7 @@ interface TripListProps {
   setIsModalOpen: (modal: boolean) => void;
 }
 
+// Function for scrolling horizontally
 const sideScroll = (
   element: HTMLDivElement,
   speed: number,
@@ -38,11 +39,11 @@ export const TripList: FC<TripListProps> = ({
   setSearchQuery,
   setIsModalOpen,
 }) => {
-  const contentWrapper = useRef<HTMLDivElement | null>(null);
-  const { selectedCity, setSelectedCity, setFromDate, setToDate } = useWeatherContext();
-  const sortedTrips = trips
+  const contentWrapper = useRef<HTMLDivElement | null>(null); // Wrapper for horizontal scrool
+  const { selectedCity, setSelectedCity, setFromDate, setToDate } = useWeatherContext(); // Getting our data of selectred trip
+  const sortedTrips = trips && trips
     .slice()
-    .sort((a, b) => a.fromDate.localeCompare(b.fromDate));
+    .sort((a, b) => a.fromDate.localeCompare(b.fromDate)); // Sort trips by start trip date
 
   return (
     <>
@@ -51,7 +52,7 @@ export const TripList: FC<TripListProps> = ({
         <div className="trip-list__row">
           <div className="trip-list__trips" ref={contentWrapper}>
             {searchQuery && trips.length === 0 && <p className="trip-list__nothing-found">Nothing found</p>}
-            {sortedTrips.map((card) => (
+            {sortedTrips && sortedTrips.map((card) => (
               <TripCard
                 key={card.id}
                 selectedCity={selectedCity}
@@ -66,7 +67,7 @@ export const TripList: FC<TripListProps> = ({
           </div>
           <AddTripButton onAddTripButtonClick={() => setIsModalOpen(true)} />
         </div>
-        {sortedTrips.length > 3 && (
+        {sortedTrips && sortedTrips.length > 3 && (
           <div className="trip-list__buttons">
             <img
               src={backArrow}

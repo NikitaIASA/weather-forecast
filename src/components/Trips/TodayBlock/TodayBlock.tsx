@@ -13,9 +13,10 @@ import "./TodayBlock.scss";
 interface TodayBlockProps {}
 
 export const TodayBlock: FC<TodayBlockProps> = () => {
-  const { selectedCity, fromDate} = useWeatherContext(); 
-  const { data, isError, isLoading } = useTodaysData({selectedCity});
+  const { selectedCity, fromDate} = useWeatherContext(); // Getting our data of selectred trip
+  const { data, isError, isLoading } = useTodaysData({selectedCity}); // Fetching data of Today's data
 
+  // Determine the weather image based on the received weather icon
   const weatherImage = data?.icon === "clear-day" ? sun : data?.icon === "rain" ? rain : data?.icon === "partly-cloudy-day" ? partlyClouds : data?.icon === "clouds" ? clouds : "";
 
   if (isLoading) {

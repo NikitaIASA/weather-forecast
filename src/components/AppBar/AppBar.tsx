@@ -9,9 +9,10 @@ import { useUserAuth } from "../../context/AuthContext";
 import "./AppBar.scss";
 
 const AppBar: FC = () => {
-  const { enqueueSnackbar } = useSnackbar();
-  const { user, logOut, googleSignIn } = useUserAuth();
+  const { enqueueSnackbar } = useSnackbar(); // Notification function
+  const { user, logOut, googleSignIn } = useUserAuth(); // User authentication context hook
 
+  // Handle user sign out
   const handleSignOut = async () => {
     try {
       alert("Are you sure that you want to logout?");
@@ -22,6 +23,7 @@ const AppBar: FC = () => {
     }
   };
 
+  // Handle user sign in with Google
   const handleSignIn = async () => {
     try {
       await googleSignIn();

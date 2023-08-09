@@ -22,6 +22,7 @@ export const DayCard: FC<DayCardProps> = ({
   maxTemperature,
   minTemperature,
 }) => {
+  // Determine the weather image based on the received weather icon
   const weatherImage = icon === "clear-day" ? sun : icon === "rain" ? rain : icon === "clouds" ? clouds : partlyClouds;
 
   return (

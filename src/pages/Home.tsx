@@ -4,17 +4,13 @@ import { useCityData } from "../api/useCityData";
 import { useWeatherContext } from "../context/WeatherContext";
 
 const WeatherPage: FC = () => {
-  const { selectedCity, fromDate, toDate } = useWeatherContext();
+  const { selectedCity, fromDate, toDate } = useWeatherContext(); // Getting data from context about selectred trip
 
-  const { data, isLoading, isError } = useCityData({
+  const { data, isLoading, isError } = useCityData({ // Fetching data 
     selectedCity,
     fromDate,
     toDate,
   });
-
-  // if (isError) {
-  //   return <div>Error occurred while fetching data</div>;
-  // }
 
   return <Home data={data} isLoading={isLoading} isError={isError} />;
 };

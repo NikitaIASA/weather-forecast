@@ -11,7 +11,7 @@ export const SignIn: FC = () => {
 
   useEffect(() => {
     if (user != null) {
-      navigate('/profile');
+      navigate('/profile'); // Redirect to the profile page if user is logged in
     }
   }, [user, navigate]);
 

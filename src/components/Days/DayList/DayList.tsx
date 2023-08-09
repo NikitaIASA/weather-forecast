@@ -22,9 +22,9 @@ export const DayList: FC<DayListProps> = ({ list, isLoading, isError }) => {
 
   return (
     <>
-      {list.length > 0 && <h2 className="day-list__dates">Dates</h2>}
+      {list && list.length > 0 && <h2 className="day-list__dates">Dates</h2>}
       <div className="day-list">
-        {list.map((item, index) => (
+        {list && list.map((item, index) => (
           <DayCard
             key={index}
             conditions={item.conditions}

@@ -19,19 +19,22 @@ const AuthContext = createContext<AuthContextProps | undefined>(undefined);
 interface AuthProviderProps {
   children: ReactNode;
 }
-
-export const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
+// Logic for auth (Authentication provider component)
+export const AuthProvider: FC<AuthProviderProps> = ({ children }) => { 
   const [user, setUser] = useState<User | null>(null);
 
-  const googleSignIn = () => {
+  // Function for Google sign-in
+  const googleSignIn = () => {  
     const provider = new GoogleAuthProvider();
     signInWithPopup(auth, provider);
   };
 
+   // Function for logging out
   const logOut = () => {
     signOut(auth);
   };
 
+  // Effect to track changes in authentication state
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
@@ -54,7 +57,8 @@ export const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
   );
 };
 
-export const useUserAuth = (): AuthContextProps => {
+// Hook for using authentication data in components
+export const useUserAuth = (): AuthContextProps => { 
   const context = useContext(AuthContext);
   if (!context) {
     throw new Error("useUserAuth must be used within an AuthProvider");
